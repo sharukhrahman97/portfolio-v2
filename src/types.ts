@@ -2,7 +2,7 @@ export type Socials = {
   NAME: string;
   HREF: string;
   ICON: string;
-};
+}[];
 
 export type Details = {
   TITLE: string;
@@ -15,25 +15,25 @@ export type Personal = {
   DESCRIPTION: string;
   PROFILE: string;
   DETAILS: Details;
-  LINKS: Array<Socials>;
+  LINKS: Socials;
 }
 
 export type Card = {
   TITLE: string;
-  SUBTITLE?: string;
+  SUBTITLE?: Array<string>;
   DESCRIPTION: string;
   LIST?: Array<string>;
   URL?: string;
-}
+}[]
 
 export type Site = {
   TITLE: string;
   DESCRIPTION: string;
-  WORK: Array<Card>;
-  PIPELINE: Array<Card>;
+  WORK: Card;
+  PIPELINE: Card;
   NUM_POSTS_ON_HOMEPAGE: number;
   NUM_PROJECTS_ON_HOMEPAGE: number;
-  EDUCATION: Array<Card>;
+  EDUCATION: Card;
 };
 
 export type Metadata = {

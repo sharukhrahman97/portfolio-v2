@@ -27,7 +27,7 @@ const { title, subtitle, description, list, url } = Astro.props as {
     </h2>
     {url !== undefined?<Link href={url} external> {url} </Link>:<></>}
   </div>
-  {subtitle!==undefined?<div class="flex flex-row items-center justify-between pt-2 text-neutral-400">
+  {subtitle!==undefined?<div class="flex flex-row items-center justify-between pt-2 dark:text-neutral-400">
     {subtitle.map((item, index) => <div class="text-sm">{item}</div>)}
   </div>:<></>}
   <div class="text-wrap pt-2 text-justify text-lg">
@@ -36,7 +36,7 @@ const { title, subtitle, description, list, url } = Astro.props as {
  {list !== undefined? <ul class="flex list-inside list-disc flex-col gap-2 pt-2">
     {
       list.map((item, index) => (
-        <li class="text-md text-wrap text-justify text-neutral-300">{item}</li>
+        <li class="text-md text-wrap text-justify dark:text-neutral-300">{item}</li>
       ))
     }
   </ul>:<></>}
