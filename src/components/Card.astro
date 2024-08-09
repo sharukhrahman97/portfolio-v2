@@ -1,0 +1,43 @@
+---
+import Link from "./Link.astro";
+
+type Props = {
+  title: string;
+  subtitle?: Array<string>;
+  description: string;
+  list?: Array<string>;
+  url?: string;
+};
+
+const { title, subtitle, description, list, url } = Astro.props as {
+  title: string;
+  subtitle?: Array<string>;
+  description: string;
+  list?: Array<string>;
+  url?: string;
+};
+---
+
+<div
+  class="group relative flex flex-1 flex-col flex-nowrap truncate rounded-lg border border-black/15 px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+>
+  <div class="flex flex-row flex-wrap items-center justify-between gap-y-2">
+    <h2 class="font-semibold text-black dark:text-white">
+      {title}
+    </h2>
+    {url !== undefined?<Link href={url} external> {url} </Link>:<></>}
+  </div>
+  {subtitle!==undefined?<div class="flex flex-row items-center justify-between pt-2 text-neutral-400">
+    {subtitle.map((item, index) => <div class="text-sm">{item}</div>)}
+  </div>:<></>}
+  <div class="text-wrap pt-2 text-justify text-lg">
+    {description}
+  </div>
+ {list !== undefined? <ul class="flex list-inside list-disc flex-col gap-2 pt-2">
+    {
+      list.map((item, index) => (
+        <li class="text-md text-wrap text-justify text-neutral-300">{item}</li>
+      ))
+    }
+  </ul>:<></>}
+</div>
