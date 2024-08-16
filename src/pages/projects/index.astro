@@ -17,15 +17,19 @@ const projects = (await getCollection("projects"))
         <div class="animate font-semibold text-black dark:text-white">
           Projects
         </div>
-        <ul class="animate not-prose flex flex-col gap-4">
-          {
-            projects.map((project) => (
-              <li>
-                <ArrowCard entry={project} />
-              </li>
-            ))
-          }
-        </ul>
+        {
+          projects.length !== 0 ? (
+            <ul class="animate not-prose flex flex-col gap-4">
+              {projects.map((project) => (
+                <li>
+                  <ArrowCard entry={project} />
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div>Nothing to see here!</div>
+          )
+        }
       </div>
     </aside>
   </Container>

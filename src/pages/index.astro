@@ -26,10 +26,10 @@ const projects: CollectionEntry<"projects">[] = (
     <aside data-pagefind-ignore>
       <div class="space-y-16">
         <section class="flex flex-col items-center gap-6 md:flex-row">
-          <img
+          <!-- <img
             class="flex size-48 rounded-full object-cover sm:size-48 md:size-60 lg:size-80"
-            src="/public/assets/profile.jpg"
-          />
+            src="/assets/profile.jpg"
+          /> -->
           <div class="flex flex-col items-start text-center">
             <h1
               class="font-heading text-wrap text-start text-3xl font-bold !leading-[1.1] sm:text-3xl md:text-4xl lg:text-5xl"
@@ -39,7 +39,7 @@ const projects: CollectionEntry<"projects">[] = (
                 >Hi!
                 <img
                   class="lg:size-30 size-10 sm:mr-4 sm:size-10 md:mr-6 md:size-20 lg:mr-8"
-                  src="/public/icons/waving-hand.svg"
+                  src="/icons/waving-hand.svg"
                 />
               </span>
               I'm
@@ -107,45 +107,45 @@ const projects: CollectionEntry<"projects">[] = (
           </ul>
         </section>
 
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
-              Latest blogs
-            </h2>
-            <Link href="/blog"> See all blogs </Link>
-          </div>
-          <ul
-            class="not-prose flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3"
-          >
-            {
-              blog.map((post) => (
-                <li>
-                  <ArrowCard entry={post} />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
+        {
+          blog.length !== 0 && (
+            <section class="animate space-y-6">
+              <div class="flex flex-wrap items-center justify-between gap-y-2">
+                <h2 class="font-semibold text-black dark:text-white">
+                  Latest blogs
+                </h2>
+                <Link href="/blog"> See all blogs </Link>
+              </div>
+              <ul class="not-prose flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
+                {blog.map((post) => (
+                  <li>
+                    <ArrowCard entry={post} />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
 
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
-              Latest projects
-            </h2>
-            <Link href="/projects"> See all projects </Link>
-          </div>
-          <ul
-            class="not-prose flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3"
-          >
-            {
-              projects.map((post) => (
-                <li>
-                  <ArrowCard entry={post} />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
+        {
+          projects.length !== 0 && (
+            <section class="animate space-y-6">
+              <div class="flex flex-wrap items-center justify-between gap-y-2">
+                <h2 class="font-semibold text-black dark:text-white">
+                  Latest projects
+                </h2>
+                <Link href="/projects"> See all projects </Link>
+              </div>
+              <ul class="not-prose flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
+                {projects.map((post) => (
+                  <li>
+                    <ArrowCard entry={post} />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
 
         <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
@@ -179,21 +179,21 @@ const projects: CollectionEntry<"projects">[] = (
             <h2 class="font-semibold text-black dark:text-white">
               GitHub Stats
             </h2>
-            <Link href="https://github.com/sharukhrahman97">
+            <Link href="https://github.com/sharukhrahman97" external>
               Visit my GitHub
             </Link>
           </div>
           <div class="flex flex-col items-start gap-4 md:flex-row md:gap-5">
             <picture>
               <img
-                id="stats-img"
-                src="https://github-readme-stats.vercel.app/api?username=sharukhrahman97&show_icons=true&theme=dark"
+                id="langs-img"
+                src="https://github-readme-stats.vercel.app/api/top-langs/?username=sharukhrahman97&size_weight=0.5&count_weight=0.5&theme=dark"
               />
             </picture>
             <picture>
               <img
-                id="langs-img"
-                src="https://github-readme-stats.vercel.app/api/top-langs/?username=sharukhrahman97&size_weight=0.5&count_weight=0.5&theme=dark"
+                id="stats-img"
+                src="https://github-readme-stats.vercel.app/api?username=sharukhrahman97&show_icons=true&theme=dark"
               />
             </picture>
           </div>

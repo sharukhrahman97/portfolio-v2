@@ -130,7 +130,7 @@ const site_education: Card = [
 ]
 
 export const SITE: Site = {
-  TITLE: "Sharukh's Portfolio",
+  TITLE: "Portfolio",
   DESCRIPTION: "Lightweight portfolio built using Astro & Tailwind.",
   WORK: site_work,
   PIPELINE: site_pipeline,
