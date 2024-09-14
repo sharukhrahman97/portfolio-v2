@@ -14,7 +14,7 @@ const { title, list } = Astro.props as Props;
     <h2 class="font-semibold text-black dark:text-white">
       {title}
     </h2>
-    <ul class="not-prose grid grid-cols-1 gap-4 md:grid md:grid-cols-3">
+    <ul class="not-prose grid grid-cols-4 gap-4 md:grid md:grid-cols-3">
       {
         list.map((item, index) => (
           <li class="flex h-full flex-col">
