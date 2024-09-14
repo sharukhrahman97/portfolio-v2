@@ -18,17 +18,24 @@ export type Personal = {
   LINKS: Socials;
 }
 
+export type Techstack = {
+  TITLE: string,
+  LIST: Array<Array<string>>
+}[]
+
 export type Card = {
   TITLE: string;
   SUBTITLE?: Array<string>;
   DESCRIPTION: string;
   LIST?: Array<string>;
   URL?: string;
+  VERTICAL?: boolean
 }[]
 
 export type Site = {
   TITLE: string;
   DESCRIPTION: string;
+  TECHSTACK: Techstack;
   WORK: Card;
   PIPELINE: Card;
   NUM_POSTS_ON_HOMEPAGE: number;

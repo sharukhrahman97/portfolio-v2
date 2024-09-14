@@ -1,62 +1,44 @@
-import type { Metadata, Site, Personal, Details, Socials, Card } from "@types";
+import type { Metadata, Site, Personal, Details, Socials, Card, Techstack } from "@types";
+
+const assets = import.meta.glob('/public/assets/*.svg', { eager: true, as: 'raw' });
+const tech = import.meta.glob('/public/tech/*.svg', { eager: true, as: 'raw' });
 
 const personal_details: Details = [
   {
     TITLE: "Chennai, India",
-    ICON: `<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0 0v6M9.5 9A2.5 2.5 0 0 1 12 6.5"/>
-</svg>
-`
+    ICON: assets["/public/assets/map-pin.svg"]
   },
   {
     TITLE: "Tamil, English",
-    ICON: `<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m13 19 3.5-9 3.5 9m-6.125-2h5.25M3 7h7m0 0h2m-2 0c0 1.63-.793 3.926-2.239 5.655M7.5 6.818V5m.261 7.655C6.79 13.82 5.521 14.725 4 15m3.761-2.345L5 10m2.761 2.655L10.2 15"/>
-</svg>
-`
+    ICON: assets["/public/assets/language.svg"]
   },
   {
     TITLE: "Male - Oct 04, 1997",
-    ICON: `<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-  <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-</svg>
-`
+    ICON: assets["/public/assets/user.svg"]
   },
 ]
 
 const personal_links: Socials = [
   {
     NAME: "Resume",
-    HREF: "/public/assets/resume-en.pdf",
-    ICON: `<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"/>
-</svg>
-`
+    HREF: "/personal/resume-en.pdf",
+    ICON: assets["/public/assets/download.svg"]
+
   },
   {
     NAME: "Email",
     HREF: "mailto:sharukhrahman.sr@gmail.com",
-    ICON: `<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-  <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m3.5 5.5 7.893 6.036a1 1 0 0 0 1.214 0L20.5 5.5M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"/>
-</svg>
-`
+    ICON: assets["/public/assets/envelope.svg"]
   },
   {
     NAME: "LinkedIn",
     HREF: "https://www.linkedin.com/in/sharukh-rahman-a411641a1/",
-    ICON: `<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-  <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
-  <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
-</svg>
-`
+    ICON: assets["/public/assets/linkedin.svg"]
   },
   {
     NAME: "Github",
     HREF: "https://github.com/sharukhrahman97",
-    ICON: `<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-  <path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z" clip-rule="evenodd"/>
-</svg>
-`
+    ICON: assets["/public/assets/github.svg"]
   },
 ]
 
@@ -64,10 +46,40 @@ export const PERSONAL: Personal = {
   NAME: "Sharukh Rahman S",
   TITLE: "Full Stack Developer",
   DESCRIPTION: "A full stack developer, quick learner and a hobbyist. Familiar with MVC patterns, Docker, Kubernetes, microservice architecture and more. Want to know more? Let's have a chat.",
-  PROFILE: "/public/assets/profile.jpg",
+  PROFILE: "/personal/profile.jpg",
   DETAILS: personal_details,
   LINKS: personal_links
 }
+
+const techstack: Techstack = [
+  {
+    TITLE: "FrontEnd Stack",
+    LIST: [
+      [tech['/public/tech/reactjs.svg'], "ReactJS"],
+      [tech['/public/tech/react-native.svg'], "React Native"],
+      [tech['/public/tech/flutter.svg'], "Flutter"],
+      [tech['/public/tech/electronjs.svg'], "Electron"],
+    ]
+  },
+  {
+    TITLE: "BackEnd Stack",
+    LIST: [
+      [tech['/public/tech/nodejs.svg'], "NodeJS"],
+      [tech['/public/tech/python.svg'], "Python"],
+      [tech['/public/tech/spring.svg'], "Spring Boot"],
+      [tech['/public/tech/mysql.svg'], "MySQL"],
+      [tech['/public/tech/mongodb.svg'], "MongoDB"],
+      [tech['/public/tech/redis.svg'], "Redis"],
+    ]
+  },
+  {
+    TITLE: "DevOps Stack",
+    LIST: [
+      [tech['/public/tech/docker.svg'], "Docker"],
+      [tech['/public/tech/kubernetes.svg'], "Kubernetes"],
+    ]
+  },
+]
 
 const site_work: Card = [
   {
@@ -132,6 +144,7 @@ const site_education: Card = [
 export const SITE: Site = {
   TITLE: "Portfolio",
   DESCRIPTION: "Lightweight portfolio built using Astro & Tailwind.",
+  TECHSTACK: techstack,
   WORK: site_work,
   PIPELINE: site_pipeline,
   NUM_POSTS_ON_HOMEPAGE: 6,

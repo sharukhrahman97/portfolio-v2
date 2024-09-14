@@ -7,6 +7,7 @@ import Link from "@components/Link.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import Card from "@components/Card.astro";
+import HCard from "@components/HCard.astro";
 
 const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
@@ -28,7 +29,7 @@ const projects: CollectionEntry<"projects">[] = (
         <section class="flex flex-col items-center gap-6 md:flex-row">
           <!-- <img
             class="flex size-48 rounded-full object-cover sm:size-48 md:size-60 lg:size-80"
-            src="/assets/profile.jpg"
+            src={PERSONAL.PROFILE}
           /> -->
           <div class="flex flex-col items-start text-center">
             <h1
@@ -39,7 +40,7 @@ const projects: CollectionEntry<"projects">[] = (
                 >Hi!
                 <img
                   class="lg:size-30 size-10 sm:mr-4 sm:size-10 md:mr-6 md:size-20 lg:mr-8"
-                  src="/icons/waving-hand.svg"
+                  src="/assets/waving-hand.svg"
                 />
               </span>
               I'm
@@ -52,7 +53,7 @@ const projects: CollectionEntry<"projects">[] = (
               {
                 PERSONAL.DETAILS.map((detail) => (
                   <li class="flex items-center justify-start gap-2">
-                    <div class="icon" set:html={detail.ICON} />
+                    <Fragment set:html={detail.ICON} />
                     {detail.TITLE}
                   </li>
                 ))
@@ -69,7 +70,7 @@ const projects: CollectionEntry<"projects">[] = (
                   <li>
                     <a href={link.HREF} target="_blank">
                       <button class="group relative flex w-fit flex-nowrap gap-2 rounded border border-black/15 p-3 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white">
-                        <div class="icon" set:html={link.ICON} />
+                        <Fragment set:html={link.ICON} />
                         {link.NAME}
                       </button>
                     </a>
@@ -78,6 +79,21 @@ const projects: CollectionEntry<"projects">[] = (
               }
             </ul>
           </div>
+        </section>
+
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-y-2">
+            <h2 class="font-semibold text-black dark:text-white">Tech Stack</h2>
+          </div>
+          <ul class="not-prose grid grid-cols-1 gap-4 md:grid md:grid-cols-3">
+            {
+              SITE.TECHSTACK.map((tech) => (
+                <li class="flex h-full flex-col">
+                  <HCard title={tech.TITLE} list={tech.LIST} />
+                </li>
+              ))
+            }
+          </ul>
         </section>
 
         <section class="animate space-y-6">
