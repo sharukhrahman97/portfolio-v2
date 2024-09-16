@@ -210,8 +210,10 @@ const {
 
     if (dark) {
       document.documentElement.classList.add("dark");
+      document.documentElement.classList.add("cc--darkmode");
     } else {
       document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove("cc--darkmode");
     }
 
     window.getComputedStyle(css).opacity;
