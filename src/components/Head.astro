@@ -23,6 +23,7 @@ const {
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta http-equiv="Feature-Policy" content="clipboard-write 'none'" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link
   rel="icon"
@@ -100,6 +101,19 @@ const {
 
     const backToPrev = document.getElementById("back-to-prev");
     backToPrev?.addEventListener("click", () => window.history.back());
+
+    const resumeDownload = document.getElementById("resume-download");
+    resumeDownload?.addEventListener("click", () => {
+      console.log("art");
+      const originalContents = document.body.innerHTML;
+      const printContents = document.getElementById("printable")?.innerHTML;
+      if (!printContents) return;
+
+      document.body.innerHTML = printContents;
+      window.print();
+
+      document.body.innerHTML = originalContents;
+    });
 
     const lightThemeButton = document.getElementById("light-theme-button");
     lightThemeButton?.addEventListener("click", () => {

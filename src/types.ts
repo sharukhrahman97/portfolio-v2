@@ -4,6 +4,11 @@ export type Socials = {
   ICON: string;
 }[];
 
+export type Project = {
+  TITLE: string;
+  HREF: string;
+}[];
+
 export type Details = {
   TITLE: string;
   ICON: string;
@@ -13,6 +18,7 @@ export type Personal = {
   NAME: string;
   TITLE: string;
   DESCRIPTION: string;
+  BIG_DESCRIPTION: string;
   PROFILE: string;
   DETAILS: Details;
   LINKS: Socials;

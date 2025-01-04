@@ -1,7 +1,7 @@
-import type { Metadata, Site, Personal, Details, Socials, Card, Techstack } from "@types";
+import type { Metadata, Site, Personal, Details, Socials, Card, Techstack, Project } from "@types";
 
-const assets = import.meta.glob('/public/assets/*.svg', { eager: true, as: 'raw' });
-const tech = import.meta.glob('/public/tech/*.svg', { eager: true, as: 'raw' });
+export const assets = import.meta.glob('/public/assets/*.svg', { eager: true, as: 'raw' });
+export const tech = import.meta.glob('/public/tech/*.svg', { eager: true, as: 'raw' });
 
 const personal_details: Details = [
   {
@@ -21,7 +21,7 @@ const personal_details: Details = [
 const personal_links: Socials = [
   {
     NAME: "Resume",
-    HREF: "/personal/resume-en.pdf",
+    HREF: "/resume",
     ICON: assets["/public/assets/download.svg"]
 
   },
@@ -45,13 +45,23 @@ const personal_links: Socials = [
 export const PERSONAL: Personal = {
   NAME: "Sharukh Rahman S",
   TITLE: "Full Stack Developer",
-  DESCRIPTION: "A full stack developer, quick learner and a hobbyist. Familiar with MVC patterns, Docker, Kubernetes, microservice architecture and more. Want to know more? Let's have a chat.",
+  DESCRIPTION: "A full stack developer and a hobbyist, familiar with Multi Modal GenAI, Nix, Docker, Kubernetes, microservice architecture and more. Can able to work on entire tech stack! Want to know more? Let's have a chat.",
+  BIG_DESCRIPTION: "Full-stack developer with over 3.6 years of experience and my expertise includes designing and deploying solutions for mobile and web applications using MERN stack, Flutter, React Native, ElectronJS and Python with both SQL and NoSQL databases, including DevOps. I'm also familiar with Docker, Kubernetes, microservice architecture, GenAI & Nix. I have a proven track record of successful project deliveries.",
   PROFILE: "/personal/profile.jpg",
   DETAILS: personal_details,
   LINKS: personal_links
 }
 
-const techstack: Techstack = [
+export const personal_projects: Project = [
+  { TITLE: "Konsol", HREF: "https://github.com/sharukhrahman97/Konsol" },
+  { TITLE: "GenAI", HREF: "https://github.com/sharukhrahman97/GenAI" },
+  { TITLE: "DashDrop", HREF: "https://dashdrop.app" },
+  { TITLE: "Live person counter", HREF: "https://github.com/sharukhrahman97/Line_Counter" },
+  { TITLE: "Todo app", HREF: "https://github.com/sharukhrahman97/todo" },
+  { TITLE: "Nix config", HREF: "https://github.com/sharukhrahman97/nix-config" }
+]
+
+export const techstack: Techstack = [
   {
     TITLE: "FrontEnd Stack",
     LIST: [
@@ -59,6 +69,8 @@ const techstack: Techstack = [
       [tech['/public/tech/react-native.svg'], "React Native"],
       [tech['/public/tech/flutter.svg'], "Flutter"],
       [tech['/public/tech/electronjs.svg'], "Electron"],
+      [tech['/public/tech/electronjs.svg'], "Electron"],
+      [tech['/public/tech/tauri.svg'], "Tauri"],
     ]
   },
   {
@@ -67,6 +79,7 @@ const techstack: Techstack = [
       [tech['/public/tech/nodejs.svg'], "NodeJS"],
       [tech['/public/tech/python.svg'], "Python"],
       [tech['/public/tech/spring.svg'], "Spring Boot"],
+      [tech['/public/tech/postgresql.svg'], "PostgreSQL"],
       [tech['/public/tech/mysql.svg'], "MySQL"],
       [tech['/public/tech/mongodb.svg'], "MongoDB"],
       [tech['/public/tech/redis.svg'], "Redis"],
@@ -75,21 +88,61 @@ const techstack: Techstack = [
   {
     TITLE: "DevOps Stack",
     LIST: [
+      [tech['/public/tech/aws.svg'], "AWS"],
       [tech['/public/tech/docker.svg'], "Docker"],
       [tech['/public/tech/kubernetes.svg'], "Kubernetes"],
+      [tech['/public/tech/nix.svg'], "Nix"],
+    ]
+  },
+  {
+    TITLE: "AI Stack",
+    LIST: [
+      [tech['/public/tech/langchain.svg'], "Langchain"],
+      [tech['/public/tech/llamaindex.svg'], "Llamaindex"],
+      [tech['/public/tech/meta.svg'], "Faiss"],
+      [tech['/public/tech/openvino.svg'], "OpenVino"],
+    ]
+  },
+  // {
+  //   TITLE: "Data Engineering Stack",
+  //   LIST: [
+  //     [tech['/public/tech/airflow.svg'], "Airflow"],
+  //     [tech['/public/tech/spark.svg'], "Spark"],
+  //   ]
+  // },
+  {
+    TITLE: "Other Tools",
+    LIST: [
+      [tech['/public/tech/blender.svg'], "Blender"],
+      [tech['/public/tech/freecad.svg'], "FreeCAD"],
+      [tech['/public/tech/github.svg'], "Github"],
+      [tech['/public/tech/jira.svg'], "Jira"],
+      [tech['/public/tech/kicad.svg'], "KiCAD"],
+      [tech['/public/tech/selenium.svg'], "Selenium"],
     ]
   },
 ]
 
-const site_work: Card = [
+export const site_work: Card = [
   {
     TITLE: "Full Stack Developer",
-    SUBTITLE: ['RadioRoom - LYTUS GROUP Venture - Chennai,India', 'May 2024 - Present'],
+    SUBTITLE: ['Yitro Tech - Chennai,India', 'Oct 2024 - Present'],
+    URL: "https://yitro.tech",
+    DESCRIPTION: "Responsible to develop frontend for smartally and web servers clan application, especially in React, FastApi, having Postgres database using SQLAlchemy. Also managed a team for building an in-house ATS system.",
+    LIST: [
+      "Developed frontend for smartally, which is an in-house AI-based ticket management and prediction b2b application.",
+      "Developed backend for clan application using FastApi which is an advanced career aggregator made for recruiters, uses micro service architecture.",
+      "Managed a team for building in-house attendance system which is developed and deployed in a short period of time.",
+    ]
+  },
+  {
+    TITLE: "Full Stack Developer",
+    SUBTITLE: ['RadioRoom - LYTUS GROUP Venture - Chennai,India', 'May 2024 - Oct 2024'],
     URL: "https://radioroom.co.in",
     DESCRIPTION: "Responsible to design, develop, and deploy mobile applications and web servers applications, especially in React Native, Node.js, having MySQL database using Prisma ORM.",
     LIST: [
-      "Integrated and fixed all payment systems made through the app, including apple subscriptions, razorpay and stripe and integrated respective webhooks for verification.",
-      "Stablized the app which is done by bug fixing and rectified unhandled crashes mainly during in app updates.",
+      "Integrated and fixed all payment systems made through the app, including apple subscriptions, RazorPay and stripe and integrated respective webhooks for verification.",
+      "Stabilized the app which is done by bug fixing and rectified unhandled crashes mainly during in app updates.",
       "Reduced loading times in the app by 10 times using parallel processing on backend components.",
     ]
   },
@@ -123,12 +176,12 @@ const site_pipeline: Card = [
     DESCRIPTION: "One of my proud pet projects, where rewriting the entire codebase to rust using tauri framework and backend to golang fiber framework. And adding some features using FFMPEG library."
   },
   {
-    TITLE: "ConSol",
-    DESCRIPTION: "This will be a hardware project and planning to integrate into dashdrop once its done. ConSol will be a controller, a midi device and a keypad for creators supporting most of the apps. Plan is to use non movable components for maximum reliablity, cheaper and eco friendly option."
+    TITLE: "KonSol",
+    DESCRIPTION: "This will be a hardware project built using KMK firmware. KonSol will be a controller, a midi device and a keypad for creators supporting most of the apps. Plan is to use non movable components for maximum reliablity, cheaper and eco friendly option."
   },
 ]
 
-const site_education: Card = [
+export const site_education: Card = [
   {
     TITLE: "M.Tech - Computer Science & Engineering",
     SUBTITLE: ['B.S Abdur Rahman Crescent Institute of Science & Technology - Chennai,India', "Jun 2019 - Mar 2021"],

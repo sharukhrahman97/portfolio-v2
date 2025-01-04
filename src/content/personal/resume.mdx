@@ -1,0 +1,98 @@
+---
+title: "Resume"
+description: "My tech resume"
+date: "2024-12-29"
+draft: false
+---
+
+import Callout from "@/components/Callout.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+import { assets, techstack, site_work, site_education, PERSONAL, personal_projects } from "@/consts.ts"
+
+<div class="flex flex-col leading-tight">
+<div class="flex text-xl font-bold">SHARUKH RAHMAN S</div>
+<div class="flex text-base font-bold">Full Stack Developer</div>
+<div class="flex flex-wrap gap-x-6 gap-y-2 pt-4 text-sm">
+  <div class="flex flex-row items-center gap-2">
+    <Fragment set:html={assets["/public/assets/phone.svg"]} />
+    <div>+91 9962017221</div>
+  </div>
+  <div class="flex flex-row items-center gap-2">
+    <Fragment set:html={assets["/public/assets/envelope.svg"]} />
+    <div>sharukhrahman.sr@gmail.com</div>
+  </div>
+  <div class="flex flex-row items-center gap-2">
+    <Fragment set:html={assets["/public/assets/link.svg"]} />
+    <div>https://sharukhrahman.vercel.app/</div>
+  </div>
+  <div class="flex flex-row items-center gap-2">
+    <Fragment set:html={assets["/public/assets/map-pin.svg"]} />
+    <div>Chennai, India</div>
+  </div>
+</div>
+<div class="flex flex-row gap-8 pt-4">
+  <div class="flex flex-col w-2/3 gap-4">
+    <div>
+      <div class="flex text-base font-semibold">Summary</div>
+      <div class="text-justify pt-2 text-sm">{PERSONAL.BIG_DESCRIPTION}</div>
+    </div>
+    <div>
+      <div class="flex text-base font-semibold">Experience</div>
+      <div class="flex flex-col gap-y-2 pt-2">
+      {site_work.map(work=>{return(<div class="flex flex-col">
+        <div class="text-justify font-semibold">{work.TITLE}</div>
+        <div class="text-justify text-sm">{work.SUBTITLE[0]}</div>
+        <div class="flex flex-row gap-4 items-center">
+          {/* <Fragment set:html={assets["/public/assets/calendar.svg"]} /> */}
+          <div class="text-sm">{work.SUBTITLE[1]}</div>
+        </div>
+        <div class="text-justify text-sm">{work.DESCRIPTION}</div>
+        {/* <div class="pl-6">
+          {work.LIST.map(item=><div class="list-item list-disc text-justify">{item}</div>)}
+        </div> */}
+      </div>)})}
+      </div>
+    </div>
+    <div>
+      <div class="flex text-base font-semibold">Education</div>
+      <div class="flex flex-col gap-y-2 pt-2">
+      {site_education.map(education=>{return(<div class="flex flex-col">
+        <div class="text-justify font-semibold">{education.TITLE}</div>
+        <div class="text-justify font-medium text-sm">{education.SUBTITLE[0]}</div>
+        <div class="flex flex-row gap-4">
+          {/* <Fragment set:html={assets["/public/assets/calendar.svg"]} /> */}
+          <div class="text-justify font-medium text-sm">{education.SUBTITLE[1]}</div>
+        </div>
+      </div>)})}
+      </div>
+    </div>
+  </div>
+<div class="flex flex-col w-1/3 gap-4">
+    <div>
+    <div class="flex text-base font-semibold">Skills</div>
+     <div class="flex flex-col gap-y-4 pt-2">
+      {
+        techstack.map(stack=>{
+        return (
+    <div class="flex flex-col">
+          <div class="font-semibold">{stack.TITLE}</div>
+        <div class="flex flex-wrap gap-2 py-1 text-sm">
+          {stack.LIST.map(tech=><div class="underline">{tech[1]}</div>)}
+        </div>
+    </div>
+        )
+        })
+      }
+     </div>
+    </div>
+    <div>
+    <div class="flex text-base font-semibold">Personal Projects</div>
+    <ul class="text-sm">
+    {personal_projects.map((project)=>{return <li><a href={project.HREF}>{project.TITLE}</a></li>})}
+    </ul> 
+    ... and more
+    
+    </div>
+</div>
+</div>
+</div>
