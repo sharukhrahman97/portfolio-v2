@@ -9,7 +9,7 @@ const personal_details: Details = [
     ICON: assets["/public/assets/map-pin.svg"]
   },
   {
-    TITLE: "Tamil, English, Japanese (learning JLPT N5)",
+    TITLE: "Tamil, English",
     ICON: assets["/public/assets/language.svg"]
   },
   {
