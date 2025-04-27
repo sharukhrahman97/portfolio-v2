@@ -129,7 +129,7 @@ export const site_work: Card = [
     TITLE: "Full Stack Developer",
     SUBTITLE: ['Yitro Tech - Chennai,India', 'Oct 2024 - Present'],
     URL: "https://yitro.tech",
-    DESCRIPTION: "Responsible to develop frontend for smartally and web servers clan application, especially in React, FastApi, having Postgres database using SQLAlchemy. Also managed a team for building an in-house ATS system.",
+    DESCRIPTION: "Responsible to develop frontend for smartally and web servers clan, Jobconnectz application, especially in React, FastApi, having Postgres database using SQLAlchemy. Also managed a team for building an in-house ATS system.",
     LIST: [
       "Developed frontend for smartally, which is an in-house AI-based ticket management and prediction b2b application.",
       "Developed backend for clan application using FastApi which is an advanced career aggregator made for recruiters, uses micro service architecture.",
