@@ -46,7 +46,7 @@ export const PERSONAL: Personal = {
   NAME: "Sharukh Rahman S",
   TITLE: "Full Stack Developer",
   DESCRIPTION: "A full stack developer and a hobbyist, familiar with Multi Modal GenAI, Nix, Docker, Kubernetes, microservice architecture and more. Can able to work on entire tech stack! Want to know more? Let's have a chat.",
-  BIG_DESCRIPTION: "Full-stack developer with over 3.6 years of experience and my expertise includes designing and deploying solutions for mobile and web applications using MERN stack, Flutter, React Native, ElectronJS and Python with both SQL and NoSQL databases, including DevOps. I'm also familiar with Docker, Kubernetes, microservice architecture, GenAI & Nix. I have a proven track record of successful project deliveries.",
+  BIG_DESCRIPTION: "Full-stack developer with over 3.7 years of experience and my expertise includes designing and deploying solutions for mobile and web applications using MERN stack, Flutter, React Native, ElectronJS and Python with both SQL and NoSQL databases, including DevOps. I'm also familiar with Docker, Kubernetes, microservice architecture, GenAI & Nix. I have a proven track record of successful project deliveries.",
   PROFILE: "/personal/profile.jpg",
   DETAILS: personal_details,
   LINKS: personal_links
@@ -58,7 +58,8 @@ export const personal_projects: Project = [
   { TITLE: "DashDrop", HREF: "https://dashdrop.app" },
   { TITLE: "Live person counter", HREF: "https://github.com/sharukhrahman97/Line_Counter" },
   { TITLE: "Todo app", HREF: "https://github.com/sharukhrahman97/todo" },
-  { TITLE: "Nix config", HREF: "https://github.com/sharukhrahman97/nix-config" }
+  { TITLE: "Nix config", HREF: "https://github.com/sharukhrahman97/nix-config" },
+  { TITLE: "Low Poly City", HREF: "https://github.com/sharukhrahman97/lowpolycity" }
 ]
 
 export const techstack: Techstack = [
