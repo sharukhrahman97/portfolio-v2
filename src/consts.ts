@@ -133,6 +133,7 @@ export const site_work: Card = [
       "Developed frontend for smartally, which is an in-house AI-based ticket management and prediction b2b application.",
       "Developed backend for clan application using FastApi which is an advanced career aggregator made for recruiters, uses micro service architecture.",
       "Managed a team for building in-house attendance system which is developed and deployed in a short period of time.",
+      "Developed backend for Jobconnectz application using FastApi which is a blue collar job search application for the government of Ghana, uses micro service architecture.",
     ]
   },
   {
