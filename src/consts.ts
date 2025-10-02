@@ -21,7 +21,7 @@ const personal_details: Details = [
 const personal_links: Socials = [
   {
     NAME: "Resume",
-    HREF: "/resume",
+    HREF: "https://docs.google.com/document/d/142NpAq6fqHvnjxYzB1pFPOyH8lYTRpJWh-_iHGNNLpY/export?format=pdf",
     ICON: assets["/public/assets/download.svg"]
 
   },
@@ -70,7 +70,6 @@ export const techstack: Techstack = [
       [tech['/public/tech/react-native.svg'], "React Native"],
       [tech['/public/tech/flutter.svg'], "Flutter"],
       [tech['/public/tech/electronjs.svg'], "Electron"],
-      [tech['/public/tech/electronjs.svg'], "Electron"],
       [tech['/public/tech/tauri.svg'], "Tauri"],
     ]
   },
@@ -79,7 +78,9 @@ export const techstack: Techstack = [
     LIST: [
       [tech['/public/tech/nodejs.svg'], "NodeJS"],
       [tech['/public/tech/python.svg'], "Python"],
+      [tech['/public/tech/gofiber.svg'], "GoFiber"],
       [tech['/public/tech/spring.svg'], "Spring Boot"],
+      [tech['/public/tech/kafka.svg'], "Kafka"],
       [tech['/public/tech/postgresql.svg'], "PostgreSQL"],
       [tech['/public/tech/mysql.svg'], "MySQL"],
       [tech['/public/tech/mongodb.svg'], "MongoDB"],
@@ -104,13 +105,6 @@ export const techstack: Techstack = [
       [tech['/public/tech/openvino.svg'], "OpenVino"],
     ]
   },
-  // {
-  //   TITLE: "Data Engineering Stack",
-  //   LIST: [
-  //     [tech['/public/tech/airflow.svg'], "Airflow"],
-  //     [tech['/public/tech/spark.svg'], "Spark"],
-  //   ]
-  // },
   {
     TITLE: "Other Tools",
     LIST: [
@@ -127,39 +121,39 @@ export const techstack: Techstack = [
 export const site_work: Card = [
   {
     TITLE: "Full Stack Developer",
-    SUBTITLE: ['Yitro Tech - Chennai,India', 'Oct 2024 - Present'],
+    SUBTITLE: ['Yitro Tech - Chennai, India', 'Oct 2024 - Present'],
     URL: "https://yitro.tech",
-    DESCRIPTION: "Responsible to develop frontend for smartally and web servers clan, Jobconnectz application, especially in React, FastApi, having Postgres database using SQLAlchemy. Also managed a team for building an in-house ATS system.",
+    DESCRIPTION: "Full-stack development across multiple products using React, Flutter, Python/FastAPI, and PostgreSQL. Led mobile teams and coordinated delivery of enterprise systems.",
     LIST: [
-      "Developed frontend for smartally, which is an in-house AI-based ticket management and prediction b2b application.",
-      "Developed backend for clan application using FastApi which is an advanced career aggregator made for recruiters, uses micro service architecture.",
-      "Managed a team for building in-house attendance system which is developed and deployed in a short period of time.",
-      "Developed backend for Jobconnectz application using FastApi which is a blue collar job search application for the government of Ghana, uses micro service architecture.",
+      "Developed React web frontends for Smartally (AI-driven ticket management) and Flutter mobile apps for Passride and Jobconnectz",
+      "Engineered scalable backend services with Python/FastAPI & PostgreSQL using microservices architecture deployed with Docker",
+      "Led mobile team for B2C app Passride and coordinated in-house team to deliver custom HRMS system",
+      "Architected standalone microservices: notification (Kafka, Celery), blob storage, authentication (Casdoor), and location service (Redis)",
+      "Implemented database migration service for seamless SQL schema updates across distributed pods"
     ]
   },
   {
     TITLE: "Full Stack Developer",
-    SUBTITLE: ['RadioRoom - LYTUS GROUP Venture - Chennai,India', 'May 2024 - Oct 2024'],
+    SUBTITLE: ['RadioRoom - LYTUS GROUP Venture - Chennai, India', 'May 2024 - Oct 2024'],
     URL: "https://radioroom.co.in",
-    DESCRIPTION: "Responsible to design, develop, and deploy mobile applications and web servers applications, especially in React Native, Node.js, having MySQL database using Prisma ORM.",
+    DESCRIPTION: "Full-stack development of mobile and web applications using React Native, Node.js, and MySQL with Prisma ORM.",
     LIST: [
-      "Integrated and fixed all payment systems made through the app, including apple subscriptions, RazorPay and stripe and integrated respective webhooks for verification.",
-      "Stabilized the app which is done by bug fixing and rectified unhandled crashes mainly during in app updates.",
-      "Reduced loading times in the app by 10 times using parallel processing on backend components.",
+      "Integrated payment systems (Apple Subscriptions, RazorPay, Stripe) with secure webhook verification",
+      "Enhanced application stability by fixing critical bugs and resolving unhandled crashes during updates",
+      "Reduced loading times by 10x through backend parallel processing optimization"
     ]
   },
   {
-    TITLE: "Full Stack Developer",
-    SUBTITLE: ['Zedbyte Software Solutions - Chennai,India', 'May 2021 - Dec 2023'],
+    TITLE: "Full Stack Developer", 
+    SUBTITLE: ['Zedbyte Software Solutions - Chennai, India', 'May 2021 - Dec 2023'],
     URL: "https://zedbyte.in",
-    DESCRIPTION: "Responsible to design, develop, and deploy mobile applications and web servers applications, especially in Flutter, ReactJS, Node.js, Python with both SQL and NoSQL databases. Handled client meets, onboarded new developers, meet product deliveries were my goals.",
+    DESCRIPTION: "Full-stack development across mobile and web applications using Flutter, React, Node.js, Python with SQL/NoSQL databases. Led team deliverables and client coordination.",
     LIST: [
-      "Developed a high-performance room/home searching app with Rest APIs (Python-Starlette), AWS S3, MongoDB, and a Flutter/Dart mobile app. The app can handle 10k requests/min and searches over 100,000 houses in less than 100ms. The app is hosted on EC2 and available on the Google Play Store.",
-      "Engineered a comment system using Node.js and MongoDB, featuring a capability to delete entire comment/blog structures through Airflow jobs.",
-      "Implemented a live location tracking and monitoring tool using Redis and Python, capable of handling nearly 10k messages/second for 10K simultaneous connections.",
-      "Designed and deployed a robust Airflow job, integrating with PySpark for efficient and automated extraction, transformation, and loading (ETL) of daily trip data stored in MongoDB.",
-      "Collaborated on the development of a social media app with versatile post/comment structures and follow logic.",
-      "Led sprint reviews, code reviews, and mentored junior developers to maintain high-quality code standards,fostering a culture of excellence and continuous improvement.",
+      "Built high-performance room search app (Flutter/Python) handling 10k requests/min, deployed on AWS EC2 and Google Play Store",
+      "Engineered scalable comment system with Node.js/MongoDB and automated cleanup via Apache Airflow",
+      "Implemented real-time location tracking using Python/Redis supporting 10K concurrent connections",
+      "Designed ETL workflows with Airflow + PySpark for automated daily data processing from MongoDB",
+      "Led sprint reviews, code reviews, and mentored junior developers to maintain code quality standards"
     ]
   },
 ]

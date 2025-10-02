@@ -102,19 +102,6 @@ const {
     const backToPrev = document.getElementById("back-to-prev");
     backToPrev?.addEventListener("click", () => window.history.back());
 
-    const resumeDownload = document.getElementById("resume-download");
-    resumeDownload?.addEventListener("click", () => {
-      console.log("art");
-      const originalContents = document.body.innerHTML;
-      const printContents = document.getElementById("printable")?.innerHTML;
-      if (!printContents) return;
-
-      document.body.innerHTML = printContents;
-      window.print();
-
-      document.body.innerHTML = originalContents;
-    });
-
     const lightThemeButton = document.getElementById("light-theme-button");
     lightThemeButton?.addEventListener("click", () => {
       localStorage.setItem("theme", "light");
