@@ -1,6 +1,6 @@
 {
-  "name": "astro-micro",
-  "type": "module",
+  "name": "portfolio",
+  "type": "portfolio",
   "version": "0.0.1",
   "packageManager": "pnpm@10.17.1",
   "engines": {
