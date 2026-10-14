@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "type": "portfolio",
+  "type": "commonjs",
   "version": "0.0.1",
   "packageManager": "pnpm@10.17.1",
   "engines": {
