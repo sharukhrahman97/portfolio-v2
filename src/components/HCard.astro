@@ -8,24 +8,22 @@ const { title, list } = Astro.props as Props;
 ---
 
 <div
-  class="group relative flex flex-1 flex-col flex-nowrap truncate rounded-lg border border-black/15 px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+  class="group relative flex flex-1 flex-col flex-nowrap rounded-lg border border-black/15 px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
 >
   <div class="flex flex-col flex-wrap justify-between gap-y-4">
     <h2 class="font-semibold text-black dark:text-white">
       {title}
     </h2>
-    <ul class="not-prose grid grid-cols-4 gap-4 md:grid md:grid-cols-3">
+    <ul class="not-prose grid grid-cols-3 gap-3 auto-rows-fr sm:grid-cols-4 md:grid-cols-3">
       {
-        list.map((item, index) => (
-          <li class="flex h-full flex-col">
-            {
-              <div class="flex flex-col items-center justify-center h-16 w-16">
-                <Fragment set:html={item[0]} />
-                <h2 class="font-medium text-black dark:text-white">
-                  {item[1]}
-                </h2>
-              </div>
-            }
+        list.map((item) => (
+          <li class="flex min-w-0 flex-col items-center justify-start gap-1 text-center">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center [&>svg]:h-full [&>svg]:w-full [&>img]:h-full [&>img]:w-full">
+              <Fragment set:html={item[0]} />
+            </div>
+            <h2 class="w-full break-words text-xs font-medium leading-tight text-black dark:text-white">
+              {item[1]}
+            </h2>
           </li>
         ))
       }
